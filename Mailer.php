@@ -2,10 +2,11 @@
 If (isset($_POST['txtdest']))
 {
     require_once('class.phpmailer.php');
-    $destino = $_POST['txtdest'];
+	$destino = $_POST['txtdest'];
     $assunto = $_POST['txtass'];
     $mensagem = $_POST['txtmsg'];
     $mailer = new PHPMailer();
+	$mailer->CharSet = "utf8";
     $mailer->IsSMTP();
     $mailer->SMTPDebug = 1;
     $mailer->Port = 587; //Indica a porta de conexão para a saída de e-mails
